@@ -24,7 +24,7 @@ public class Counseller {
 	private String email;
 	private String pwd;
 	private Long phno;
-	private Double price;
+
 	@CreationTimestamp
 	private Date createdDate ;
 	@UpdateTimestamp
