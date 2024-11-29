@@ -25,18 +25,7 @@ public class Counseller {
 	private String pwd;
 	private Long phno;
 	
-	//////////////////////////////
-    private String gender;
-    public void setGender(String gender)
-    {
-    	this.gender=gender;
-    }
-    
-    public String getGender()
-    {
-    	return gender;
-    }
-    /////////////////////////
+	
 	@CreationTimestamp
 	private Date createdDate ;
 	@UpdateTimestamp
