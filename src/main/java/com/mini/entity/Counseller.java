@@ -25,7 +25,7 @@ public class Counseller {
 	private String pwd;
 	private Long phno;
 	
-	
+	private String gender;
 	@CreationTimestamp
 	private Date createdDate ;
 	@UpdateTimestamp

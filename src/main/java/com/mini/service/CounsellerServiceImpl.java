@@ -24,7 +24,7 @@ public class CounsellerServiceImpl implements CounsellerService {
 	}
 
 	@Override
-	public Counseller login(String email, String pwd) {
+	public Counseller login(String email, String password) {
 		// TODO Auto-generated method stub
 		Counseller byEmailAndPwd = repo.findByEmailAndPwd();
 	
@@ -32,7 +32,7 @@ public class CounsellerServiceImpl implements CounsellerService {
 	}
 
 	@Override
-	public DashboardResponse getDashboard(Integer cid) {
+	public DashboardResponse getDashboard(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
