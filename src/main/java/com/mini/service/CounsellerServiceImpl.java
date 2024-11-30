@@ -96,6 +96,11 @@ public class CounsellerServiceImpl implements CounsellerService {
 		System.out.println("mohini");
 	}
 	
+	//task 325
+	public void m3()
+	{
+		//logic 
+	}
 	
 	
 
