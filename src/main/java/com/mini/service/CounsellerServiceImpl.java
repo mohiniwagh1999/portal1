@@ -31,7 +31,7 @@ public class CounsellerServiceImpl implements CounsellerService {
 	public void m2()
 	{
 		//logic 
-		System.out.println("mohini");
+		System.out.println("ashok");
 		}
 	
 	@Override
