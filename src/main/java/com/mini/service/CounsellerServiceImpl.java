@@ -32,6 +32,7 @@ public class CounsellerServiceImpl implements CounsellerService {
 	{
 		//logic 
 		System.out.println("ashok");
+		String s1="Anand";
 		}
 	
 	@Override
