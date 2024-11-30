@@ -7,7 +7,7 @@ import com.mini.entity.Enquiry;
 
 public interface EnquiryService {
 	
-	public boolean addEnquiry(Enquiry enquiry);
+	public boolean addEnquiry(Enquiry enquiry,Integer cid) throws Exception;
 	
 	public List<Enquiry> getAllEnquires(Integer cid);
 	

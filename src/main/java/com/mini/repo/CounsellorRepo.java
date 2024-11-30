@@ -6,6 +6,7 @@ import com.mini.entity.Counseller;
 
 public interface CounsellorRepo extends JpaRepository<Counseller,Integer> {
 	
-	public Counseller findByEmailAndPwd();
+	public Counseller findByEmail(String email);
+	public Counseller findByEmailAndPwd(String email,String pwd);
 
 }

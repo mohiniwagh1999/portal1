@@ -1,19 +1,35 @@
 package com.mini.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mini.dto.DashboardResponse;
 import com.mini.entity.Counseller;
+import com.mini.entity.Enquiry;
 import com.mini.repo.CounsellorRepo;
+import com.mini.repo.EnquiryRepo;
 
 @Service
 public class CounsellerServiceImpl implements CounsellerService {
    
 	@Autowired
 	private CounsellorRepo repo;
+	@Autowired
+	private EnquiryRepo enqrepo;
+	
 	@Override
-	public boolean registerh(Counseller counseller) {
+	public Counseller findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return repo.findByEmail(email);
+	
+	}
+	
+	
+	@Override
+	public boolean register(Counseller counseller) {
 		// TODO Auto-generated method stub
 		Counseller save = repo.save(counseller);
 		if(save.getCid()!=null)
@@ -24,9 +40,9 @@ public class CounsellerServiceImpl implements CounsellerService {
 	}
 
 	@Override
-	public Counseller login(String email, String password) {
+	public Counseller login(String email, String pwd) {
 		// TODO Auto-generated method stub
-		Counseller byEmailAndPwd = repo.findByEmailAndPwd();
+		Counseller byEmailAndPwd = repo.findByEmailAndPwd(email,pwd);
 	
 		return byEmailAndPwd;
 	}
@@ -34,7 +50,36 @@ public class CounsellerServiceImpl implements CounsellerService {
 	@Override
 	public DashboardResponse getDashboard(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		DashboardResponse response=new DashboardResponse();
+		List<Enquiry> enqList = enqrepo.getEnquiryByCid(id);
+		int totalEnq=enqList.size();
+		
+		int enrollEnq=enqList.stream().filter(s->s.getStatus().equals("enrollEnq"))
+		.collect(Collectors.toList()).size();
+		
+		
+		
+		
+		int openEnq=enqList.stream().filter(s->s.getStatus().equals("openEnq"))
+		.collect(Collectors.toList()).size();
+	
+		
+		
+		
+		int lostEnq=enqList.stream().filter(s->s.getStatus().equals("lostEnq"))
+				
+		.collect(Collectors.toList()).size();
+		response.setEnrollEnq(enrollEnq);
+		response.setLostEnq(lostEnq);
+		response.setTotalEnq(totalEnq);
+		response.setOpenEnq(openEnq);
+		return response;
+		
+		
+		
 	}
+
+	
 
 }

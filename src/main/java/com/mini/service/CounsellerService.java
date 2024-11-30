@@ -5,8 +5,8 @@ import com.mini.entity.Counseller;
 
 public interface CounsellerService {
 	
-	
-	public boolean registerh(Counseller counseller);
+	public Counseller findByEmail(String email);
+	public boolean register(Counseller counseller);
 	
 	public Counseller login(String email,String pwd);
 	

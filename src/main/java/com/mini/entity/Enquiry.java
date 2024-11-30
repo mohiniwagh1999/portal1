@@ -26,7 +26,7 @@ public class Enquiry {
 	private String classMode;
 	private String course;
 	private String status;
-	private Integer price;
+	
 	@CreationTimestamp
 	private Date createdDate;
 	@UpdateTimestamp
