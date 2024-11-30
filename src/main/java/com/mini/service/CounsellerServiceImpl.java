@@ -27,6 +27,12 @@ public class CounsellerServiceImpl implements CounsellerService {
 	
 	}
 	
+	//task321
+	public void m2()
+	{
+		//logic 
+		System.out.println("mohini");
+		}
 	
 	@Override
 	public boolean register(Counseller counseller) {
